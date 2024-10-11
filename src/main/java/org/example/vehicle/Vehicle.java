@@ -1,15 +1,15 @@
 package org.example.vehicle;
 
-public class Vehicle {
-    private String make;
+public abstract class Vehicle {
+    private String brand;
     private String model;
     private int year;
     private int amountOfPassengers;
     private double price;
     private int speed;
 
-    public Vehicle(String make, String model, int year, int amountOfPassengers, double price, int speed) {
-        this.make = make;
+    public Vehicle(String brand, String model, int year, int amountOfPassengers, double price, int speed) {
+        this.brand = brand;
         this.model = model;
         this.year = year;
         this.amountOfPassengers = amountOfPassengers;
@@ -17,12 +17,12 @@ public class Vehicle {
         this.speed = speed;
     }
 
-    public String getMake() {
-        return make;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setMake(String make) {
-        this.make = make;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public String getModel() {
@@ -65,9 +65,11 @@ public class Vehicle {
         this.speed = speed;
     }
 
+    public abstract double getConsumption();
+
     @Override
     public String toString() {
-        return "Make: " + make +
+        return "Brand: " + brand +
                 "; Model: " +model+
                 "; Year: " +year+
                 "; Amount of passengers: " +amountOfPassengers+
